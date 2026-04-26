@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Wave</title>
+    <link rel="icon" href="/about-wave/site_top.png" type="image/png">
+    <link rel="icon" href="/about-wave/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/about-wave/site_top.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <div class="site-shell"></div>
+    <div class="container">
+        <aside class="sidebar">
+            <button class="identity-badge" id="identityBadge" type="button" aria-label="Show player stats" aria-pressed="false">
+                <div class="badge-card">
+                    <div class="badge-face badge-front">
+                        <div class="badge-front-content">
+                            <img src="profile.png" alt="Wave profile picture" class="profile-img">
+                            <p class="eyebrow">CS2 / Creator / Competitor</p>
+                            <div class="username">@Wave</div>
+                            <p class="bio">Ambitious FPS player building a gaming-focused brand across YouTube, Twitch, and short-form content.</p>
+                        </div>
+                        <span class="badge-hint">Tap to view player card</span>
+                    </div>
+
+                    <div class="badge-face badge-back">
+                        <div class="player-tags">
+                            <div class="player-tag">
+                                <span>Current Rank</span>
+                                <strong>Global Elite / Faceit 10</strong>
+                            </div>
+                            <div class="player-tag">
+                                <span>Server</span>
+                                <strong>Europe</strong>
+                            </div>
+                            <div class="player-tag">
+                                <span>Peak ELO</span>
+                                <strong>3150</strong>
+                            </div>
+                            <div class="player-tag">
+                                <span>Team</span>
+                                <strong>Open for Team</strong>
+                            </div>
+                        </div>
+                        <span class="badge-hint badge-hint-back">Tap to flip back</span>
+                    </div>
+                </div>
+            </button>
+
+            <div class="socials">
+                <a href="https://www.youtube.com/@wave7476" target="_blank" rel="noreferrer">YouTube</a>
+                <a href="https://www.twitch.tv/wave_l7" target="_blank" rel="noreferrer">Twitch</a>
+                <a href="https://www.tiktok.com/@wave_l7" target="_blank" rel="noreferrer">TikTok</a>
+                <a href="https://x.com/wave_ll7?s=21&t=BufkbjyhLS3uzWWzU3MtsQ" target="_blank" rel="noreferrer">X</a>
+            </div>
+
+            <nav class="nav">
+                <button class="nav-link" data-section="about">About Me</button>
+                <button class="nav-link active" data-section="settings">My Game Settings</button>
+                <button class="nav-link" data-section="gear">My Gear</button>
+            </nav>
+
+            <button id="themeToggle" aria-label="Toggle theme"></button>
+        </aside>
+
+        <main class="content">
+            <section class="section" data-section="about">
+                <div class="section-title">Who is Wave?</div>
+                <div class="about-panel-flip" id="aboutPanelFlip">
+                    <div class="about-panel-card">
+                        <div class="panel about-panel about-panel-face about-panel-front" data-about-panel-toggle tabindex="0" role="button" aria-label="Show streaming and upload schedule">
+                            <div class="about-copy">
+                                <h2>A bit about myself</h2>
+                                <div class="about-intro-chip">My name is Liam</div>
+                                <p>I started playing games at a very young age and got hooked on FPS titles through Call of Duty 2 and Call of Duty 4. But I really fell in love with the genre when I stepped into the CS:GO territory.</p>
+                                <p>Now I’m actively pursuing the highest level of gameplay, constantly improving while also maintaining that "fun" in games.</p>
+                                <blockquote class="about-quote">
+                                    <span class="about-quote-mark">"</span>
+                                    <p>Your time is limited, so don’t waste it living someone else’s life.</p>
+                                </blockquote>
+                            </div>
+
+                            <div class="milestone-summary">
+                                <div class="summary-box">
+                                    <span>Started With</span>
+                                    <strong>Competitive CS2 passion</strong>
+                                </div>
+                                <div class="summary-box">
+                                    <span>Built Around</span>
+                                    <strong>YouTube + Esports</strong>
+                                </div>
+                                <div class="summary-box">
+                                    <span>Current Goal</span>
+                                    <strong>Make it to the Premier League</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel about-panel about-panel-face about-panel-back">
+                            <button class="about-panel-toggle" type="button" data-about-panel-toggle aria-label="Show about me story">Back to Story</button>
+                            <div class="schedule-copy">
+                                <span class="widget-kicker">Content Schedule</span>
+                                <h2>Live & Upload Calendar</h2>
+                                <p>Keeping the week simple and consistent: live streams run from Friday to Sunday, and new videos land on Wednesday and Sunday.</p>
+                                <div class="schedule-legend" aria-label="Calendar legend">
+                                    <div class="schedule-legend-item">
+                                        <span class="schedule-marker stream" aria-hidden="true"></span>
+                                        <span>Stream</span>
+                                    </div>
+                                    <div class="schedule-legend-item">
+                                        <span class="schedule-marker upload" aria-hidden="true"></span>
+                                        <span>Upload</span>
+                                    </div>
+                                    <div class="schedule-legend-item">
+                                        <span class="schedule-marker both" aria-hidden="true"></span>
+                                        <span>Stream + Upload</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="schedule-card" aria-label="Weekly content calendar">
+                                <div class="schedule-grid">
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Mon</span>
+                                        <span class="schedule-marker off" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Tue</span>
+                                        <span class="schedule-marker off" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Wed</span>
+                                        <span class="schedule-marker upload" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Thu</span>
+                                        <span class="schedule-marker off" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Fri</span>
+                                        <span class="schedule-marker stream" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day">
+                                        <span class="schedule-day-label">Sat</span>
+                                        <span class="schedule-marker stream" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="schedule-day featured">
+                                        <span class="schedule-day-label">Sun</span>
+                                        <span class="schedule-marker both" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="schedule-note">
+                                    <strong>Streaming:</strong> Friday to Sunday, 7 PM to 10 PM (Ljubljana time)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-widgets">
+                    <div class="panel about-widget contact-widget">
+                        <div class="widget-header">
+                            <span class="widget-kicker">Contact Me</span>
+                            <h3>Messages & Business Reachout</h3>
+                        </div>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="contact-item-main">
+                                    <span>DM me on X</span>
+                                    <strong>@wave_ll7</strong>
+                                </div>
+                                <a class="contact-mini-cta" href="https://x.com/wave_ll7?s=21&t=BufkbjyhLS3uzWWzU3MtsQ" target="_blank" rel="noreferrer" aria-label="Open X contact"></a>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-main">
+                                    <span>Email</span>
+                                    <strong>wave_l7.business@outlook.com</strong>
+                                </div>
+                                <a class="contact-mini-cta" href="mailto:wave_l7.business@outlook.com" aria-label="Open email prompt"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel about-widget region-widget">
+                        <div class="widget-header">
+                            <span class="widget-kicker">Country & Region</span>
+                            <h3>Europe / Slovenia</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-header">
+                    <div class="section-title timeline-title">Progress Timeline</div>
+                    <div class="timeline-switch" aria-label="Timeline switcher">
+                        <button class="timeline-tab active" data-timeline="esports">Esports</button>
+                        <button class="timeline-tab" data-timeline="channel">Channel</button>
+                    </div>
+                </div>
+
+                <div class="timeline-view active" data-timeline-view="esports">
+                    <div class="timeline">
+                        <article class="timeline-item timeline-item-start completed">
+                            <span class="timeline-year">The Beginning</span>
+                            <button class="timeline-card-flip" type="button" aria-label="Show Competitive Start achievement date">
+                                <div class="timeline-card-stack">
+                                    <div class="timeline-card timeline-card-front">
+                                        <h3>Competitive Start</h3>
+                                        <p>Started my grind up at the beginning of 2026 and am slowly grinding my way to the top level of the faceit playerbase.</p>
+                                    </div>
+                                    <div class="timeline-card timeline-card-back">
+                                        <span class="timeline-date-label">Achievement Date</span>
+                                        <strong>17 Jan 2026</strong>
+                                    </div>
+                                </div>
+                            </button>
+                        </article>
+                        <article class="timeline-item completed">
+                            <span class="timeline-year">Breakthrough</span>
+                            <button class="timeline-card-flip" type="button" aria-label="Show First Serious Milestone achievement date">
+                                <div class="timeline-card-stack">
+                                    <div class="timeline-card timeline-card-front">
+                                        <h3>First Serious Milestone</h3>
+                                        <p>Reached 3k ELO for the first time </p>
+                                    </div>
+                                    <div class="timeline-card timeline-card-back">
+                                        <span class="timeline-date-label">Achievement Date</span>
+                                        <strong>30 Mar 2026</strong>
+                                    </div>
+                                </div>
+                            </button>
+                        </article>
+                        <article class="timeline-item goal">
+                            <span class="timeline-year">Next</span>
+                            <div class="timeline-card">
+                                <h3>Final Goal</h3>
+                                <p>Aim to reach 4k ELO and earn a spot on my first esports team.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="timeline-view" data-timeline-view="channel">
+                    <div class="timeline">
+                        <article class="timeline-item timeline-item-start completed">
+                            <span class="timeline-year">The Start</span>
+                            <button class="timeline-card-flip" type="button" aria-label="Show Channel Launch achievement date">
+                                <div class="timeline-card-stack">
+                                    <div class="timeline-card timeline-card-front">
+                                        <h3>Channel Launch</h3>
+                                        <p>Created the Wave channel and uploaded the first Call of Duty Warzone montage.</p>
+                                    </div>
+                                    <div class="timeline-card timeline-card-back">
+                                        <span class="timeline-date-label">Achievement Date</span>
+                                        <strong>10 Nov 2020</strong>
+                                    </div>
+                                </div>
+                            </button>
+                        </article>
+                        <article class="timeline-item completed">
+                            <span class="timeline-year">Video Milestone</span>
+                            <button class="timeline-card-flip" type="button" aria-label="Show Grinding Phase achievement date">
+                                <div class="timeline-card-stack">
+                                    <div class="timeline-card timeline-card-front">
+                                        <h3>First Big Short</h3>
+                                        <p>"Justice Rains From Above" Became the first Arc Raiders Short to reach one hundred thousand views on Christmas Eve and it felt unreal.</p>
+                                    </div>
+                                    <div class="timeline-card timeline-card-back">
+                                        <span class="timeline-date-label">Achievement Date</span>
+                                        <strong>24 Dec 2025</strong>
+                                    </div>
+                                </div>
+                            </button>
+                        </article>
+                        <article class="timeline-item completed">
+                            <span class="timeline-year">Video Milestone</span>
+                            <button class="timeline-card-flip" type="button" aria-label="Show Breakthrough achievement date">
+                                <div class="timeline-card-stack">
+                                    <div class="timeline-card timeline-card-front">
+                                        <h3>First Hundred Views</h3>
+                                        <p>"Solo Queue Dust 2 FACEIT – Road to 3K" Became the first video to pass one hundred views.</p>
+                                    </div>
+                                    <div class="timeline-card timeline-card-back">
+                                        <span class="timeline-date-label">Achievement Date</span>
+                                        <strong>16 Mar 2026</strong>
+                                    </div>
+                                </div>
+                            </button>
+                        </article>
+                        <article class="timeline-item goal">
+                            <span class="timeline-year">Goal</span>
+                            <div class="timeline-card">
+                                <h3>Channel Goal</h3>
+                                <p>Reach 100 Subscribers on YouTube.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="timeline-outro">Thanks for all the support and for taking the time to read my story.</p>
+            </section>
+
+            <section class="section active" data-section="settings">
+                <div class="section-title">My Game Settings</div>
+                <div class="panel settings-panel">
+                    <p class="section-intro">My Counter‑Strike 2 in-game settings. Click any row to copy the value.</p>
+
+                    <div class="settings-list">
+                        <div class="settings-group">
+                            <h3>Mouse - Razer Viper V3 Pro</h3>
+                            <div class="settings-row"><span>DPI</span><strong>800</strong></div>
+                            <div class="settings-row"><span>eDPI</span><strong>920</strong></div>
+                            <div class="settings-row"><span>Sensitivity</span><strong>1.3</strong></div>
+                            <div class="settings-row"><span>Zoom Sensitivity</span><strong>1</strong></div>
+                            <div class="settings-row"><span>Polling Rate</span><strong>4000 Hz</strong></div>
+                            <div class="settings-row"><span>Windows Sensitivity</span><strong>6</strong></div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Video Settings</h3>
+                            <div class="settings-row"><span>Resolution</span><strong>1280x960</strong></div>
+                            <div class="settings-row"><span>Aspect Ratio</span><strong>4:3 Stretched</strong></div>
+                            <div class="settings-row"><span>Refresh Rate</span><strong>360 Hz</strong></div>
+                            <div class="settings-row"><span>Brightness</span><strong>100%</strong></div>
+                            <p class="settings-subtitle">Advanced Video Settings</p>
+                            <div class="settings-row"><span>Boost Player Contrast</span><strong>Enabled</strong></div>
+                            <div class="settings-row"><span>V-Sync</span><strong>Disabled</strong></div>
+                            <div class="settings-row"><span>NVIDIA Reflex</span><strong>Disabled</strong></div>
+                            <div class="settings-row"><span>NVIDIA G-Sync</span><strong>Disabled</strong></div>
+                            <div class="settings-row"><span>Maximum FPS In Game</span><strong>360</strong></div>
+                            <div class="settings-row"><span>Anti-Aliasing (MSAA)</span><strong>8x MSAA</strong></div>
+                            <div class="settings-row"><span>Global Shadow Quality</span><strong>High</strong></div>
+                            <div class="settings-row"><span>Dynamic Shadows</span><strong>All</strong></div>
+                            <div class="settings-row"><span>Model / Texture Detail</span><strong>Low</strong></div>
+                            <div class="settings-row"><span>Texture Filtering Mode</span><strong>Anisotropic 16x</strong></div>
+                            <div class="settings-row"><span>Shader Detail</span><strong>Low</strong></div>
+                            <div class="settings-row"><span>Particle Detail</span><strong>Low</strong></div>
+                            <div class="settings-row"><span>Ambient Occlusion</span><strong>Disabled</strong></div>
+                            <div class="settings-row"><span>High Dynamic Range</span><strong>Quality</strong></div>
+                            <div class="settings-row"><span>FSR</span><strong>Disabled (Highest Quality)</strong></div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Crosshair</h3>
+                            <div class="settings-row"><span>Crosshair Style</span><strong>Classic Static</strong></div>
+                            <div class="settings-row"><span>Follow Recoil</span><strong>No</strong></div>
+                            <div class="settings-row"><span>Center Dot</span><strong>No</strong></div>
+                            <div class="settings-row"><span>Length</span><strong>1.2</strong></div>
+                            <div class="settings-row"><span>Thickness</span><strong>0.3</strong></div>
+                            <div class="settings-row"><span>Gap</span><strong>-2.1</strong></div>
+                            <div class="settings-row"><span>Outline</span><strong>0.7</strong></div>
+                            <div class="settings-row"><span>Color</span><strong>Magenta</strong></div>
+                            <div class="settings-row"><span>Red</span><strong>255</strong></div>
+                            <div class="settings-row"><span>Green</span><strong>0</strong></div>
+                            <div class="settings-row"><span>Blue</span><strong>255</strong></div>
+                            <div class="settings-row"><span>Alpha</span><strong>255</strong></div>
+                            <div class="settings-row"><span>T Style</span><strong>No</strong></div>
+                            <div class="settings-row"><span>Deployed Weapon Gap</span><strong>No</strong></div>
+                            <div class="settings-row"><span>Crosshair Code</span><strong>CSGO-5ji9n-WWWCx-owoFn-mTSYr-TptiB</strong></div>
+                            <p class="settings-note">I change crosshairs pretty often based on map, but this is the one I use most :).</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Viewmodel</h3>
+                            <div class="settings-row"><span>viewmodel_fov</span><strong>68</strong></div>
+                            <div class="settings-row"><span>viewmodel_offset_x</span><strong>2.5</strong></div>
+                            <div class="settings-row"><span>viewmodel_offset_y</span><strong>-2</strong></div>
+                            <div class="settings-row"><span>viewmodel_offset_z</span><strong>-2</strong></div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>HUD</h3>
+                            <div class="settings-row"><span>HUD Scale</span><strong>1</strong></div>
+                            <div class="settings-row"><span>HUD Color</span><strong>Pink</strong></div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Radar</h3>
+                            <div class="settings-row"><span>Radar Centers The Player</span><strong>Yes</strong></div>
+                            <div class="settings-row"><span>Radar is Rotating</span><strong>Yes</strong></div>
+                            <div class="settings-row"><span>Radar Shape Toggle</span><strong>Yes</strong></div>
+                            <div class="settings-row"><span>Radar Hud Size</span><strong>0.91</strong></div>
+                            <div class="settings-row"><span>Radar Map Zoom</span><strong>0.4</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" data-section="gear">
+                <div class="section-title">My Gear</div>
+                <div class="panel">
+                    <div class="grid">
+                        <div class="card">
+                            <img src="mouse.jpg" alt="Razer Viper V3 Pro">
+                            <h3>Razer Viper V3 Pro</h3>
+                        </div>
+                        <div class="card">
+                            <img src="mousepad.jpg" alt="Razer Gigantus v2">
+                            <h3>Razer Gigantus v2</h3>
+                        </div>
+                        <div class="card">
+                            <img src="keyboard.jpg" alt="Razer Huntsman Mini">
+                            <h3>Razer Huntsman Mini</h3>
+                        </div>
+                        <div class="card">
+                            <img src="monitor_1.jpg" alt="Alienware AW2725QF 27 Inch 4K">
+                            <h3>Alienware AW2725QF 27 Inch 4K</h3>
+                        </div>
+                        <div class="card">
+                            <img src="headphones.jpg" alt="Sennheiser HD 560 S">
+                            <h3>Sennheiser HD 560 S</h3>
+                        </div>
+                        <div class="card">
+                            <img src="microphone.jpg" alt="ELGATO Wave:3">
+                            <h3>ELGATO Wave:3</h3>
+                        </div>
+                        <div class="card">
+                            <img src="webcam.jpg" alt="Logitech Brio 4K UHD">
+                            <h3>Logitech Brio 4K UHD</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">My System</div>
+                <div class="panel">
+                    <div class="grid">
+                        <div class="card">
+                            <img src="cpu.jpg" alt="Ryzen 7 9800X3D">
+                            <h3>Ryzen 7 9800X3D</h3>
+                        </div>
+                        <div class="card">
+                            <img src="cpu_cooler.jpg" alt="DeepCool LS720 WH 360mm AIO">
+                            <h3>DeepCool LS720 WH 360mm AIO</h3>
+                        </div>
+                        <div class="card">
+                            <img src="ram.jpg" alt="ENVINDA DDR5 5600Mhz">
+                            <h3>ENVINDA DDR5 5600Mhz</h3>
+                        </div>
+                        <div class="card">
+                            <img src="gpu.jpg" alt="Gigabyte AERO 4070ti">
+                            <h3>Gigabyte AERO 4070ti</h3>
+                        </div>
+                        <div class="card">
+                            <img src="motherboard.jpg" alt="ASRock B850 Pro RS">
+                            <h3>ASRock B850 Pro RS</h3>
+                        </div>
+                        <div class="card">
+                            <img src="case.jpg" alt="NZXT H7 Flow">
+                            <h3>NZXT H7 Flow</h3>
+                        </div>
+                        <div class="card">
+                            <img src="case_fans.jpg" alt="Lian Li Bora Digital Gray">
+                            <h3>Lian Li Bora Digital Gray</h3>
+                        </div>
+                        <div class="card">
+                            <img src="ssd.jpg" alt="Crucial T500 2TB">
+                            <h3>Crucial T500 2TB</h3>
+                        </div>
+                        <div class="card">
+                            <img src="psu.jpg" alt="Thermaltake GF1 850W">
+                            <h3>Thermaltake GF1 850W</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
