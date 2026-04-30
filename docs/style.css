@@ -1884,46 +1884,6 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     body::after {
         animation: none;
     }
-
-    .timeline-item:not(:last-child)::after {
-        animation: timelineLineBreathe 14s ease-in-out infinite, timelineLineFlow 30s linear infinite;
-    }
-
-    .timeline-item.completed::before {
-        animation: timelineBreathe 12s ease-in-out infinite;
-    }
-
-    .timeline-item.goal::before {
-        animation: timelineGoalLock 16s ease-in-out infinite;
-    }
-
-    .timeline-item.goal::after {
-        animation: timelineGoalCoreDotBreathe 16s ease-in-out infinite;
-    }
-
-    .goal-rings {
-        animation: timelineGoalRingBreathe 16s ease-in-out infinite;
-    }
-
-    .goal-rings::before {
-        animation: timelineGoalInnerRingBreathe 16s ease-in-out infinite;
-    }
-
-    .goal-rings::after {
-        animation: timelineGoalCoreBreathe 16s ease-in-out infinite;
-    }
-
-    .goal-orbit {
-        animation: timelineGoalOrbit 64s linear infinite;
-    }
-
-    .goal-orbit::before {
-        animation: timelineGoalOrbiterPulse 16s ease-in-out infinite;
-    }
-
-    .goal-orbit::after {
-        animation: timelineGoalOrbiterPulse 18s ease-in-out infinite;
-    }
 }
 
 @keyframes timelineGoalLock {
