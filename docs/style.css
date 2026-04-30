@@ -497,7 +497,7 @@ body:not(.dark) .settings-group {
 
 .about-panel-card {
     position: relative;
-    min-height: 430px;
+    min-height: 470px;
     transform-style: preserve-3d;
     transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -508,8 +508,10 @@ body:not(.dark) .settings-group {
 
 .about-panel {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
-    gap: 28px;
+    grid-template-columns: minmax(0, 1.82fr) minmax(248px, 0.8fr);
+    gap: 24px;
+    height: 100%;
+    align-items: stretch;
 }
 
 .about-panel-face {
@@ -517,7 +519,7 @@ body:not(.dark) .settings-group {
     inset: 0;
     backface-visibility: hidden;
     overflow: hidden;
-    padding-top: 66px;
+    padding-top: 62px;
 }
 
 .about-panel-back {
@@ -737,28 +739,76 @@ body:not(.dark) .contact-item {
     font-family: "Rajdhani", sans-serif;
     font-size: 2rem;
     line-height: 1;
-    margin-bottom: 14px;
+    margin: 0;
 }
 
 .about-copy {
-    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    min-height: 0;
+    padding-top: 0;
 }
 
 .about-intro-chip {
     display: block;
-    margin: 2px 0 16px;
+    margin: 0;
     color: var(--accent);
     font-family: "Rajdhani", sans-serif;
-    font-size: 1.12rem;
+    font-size: 1.08rem;
     font-weight: 700;
     letter-spacing: 0.06em;
 }
 
+.about-role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin: 4px 0;
+}
+
+.about-role-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 195, 0.12);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01)),
+        rgba(0, 255, 195, 0.04);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    color: color-mix(in srgb, var(--accent) 34%, var(--muted) 66%);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+body:not(.dark) .about-role-tag {
+    border-color: rgba(0, 125, 95, 0.12);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(247, 251, 249, 0.92)),
+        rgba(0, 125, 95, 0.045);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+    color: #5a776e;
+}
+
+.about-copy > p {
+    max-width: 45ch;
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.72;
+}
+
 .about-quote {
     position: relative;
-    margin-top: 20px;
-    padding: 18px 18px 18px 42px;
-    border-radius: 18px;
+    margin-top: auto;
+    padding: 16px 18px 16px 40px;
+    border-radius: 20px;
     border: 1px solid rgba(0, 255, 195, 0.14);
     background: rgba(0, 255, 195, 0.06);
 }
@@ -771,18 +821,18 @@ body:not(.dark) .about-quote {
 .about-quote-mark {
     position: absolute;
     left: 14px;
-    top: 8px;
+    top: 7px;
     color: var(--accent);
     font-family: "Rajdhani", sans-serif;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: 1;
 }
 
 .about-quote p {
     color: var(--text);
-    font-size: 0.98rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0;
 }
 
@@ -970,24 +1020,29 @@ body:not(.dark) .schedule-note {
 }
 
 .section-intro,
-.about-copy p,
 .timeline-card p {
     color: var(--muted);
     line-height: 1.8;
 }
 
+.about-copy p {
+    color: var(--muted);
+}
+
 .milestone-summary {
     display: grid;
-    align-content: start;
-    gap: 12px;
+    height: 100%;
+    align-content: stretch;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 10px;
     padding-top: 4px;
 }
 
 .summary-box {
     position: relative;
-    min-height: 92px;
-    padding: 18px 20px 18px 20px;
-    border-radius: 20px;
+    min-height: 0;
+    padding: 15px 18px;
+    border-radius: 18px;
     background:
         linear-gradient(180deg, rgba(0, 255, 195, 0.05), rgba(255, 255, 255, 0.02)),
         rgba(0, 255, 195, 0.06);
@@ -1009,19 +1064,19 @@ body:not(.dark) .summary-box {
     display: block;
     color: var(--accent);
     font-family: "Rajdhani", sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     opacity: 0.95;
 }
 
 .summary-box strong {
     font-family: "Rajdhani", sans-serif;
-    font-size: 1.16rem;
+    font-size: 1.14rem;
     line-height: 1.2;
-    max-width: 18ch;
+    max-width: 15ch;
 }
 
 .timeline-title {
@@ -1126,14 +1181,113 @@ body:not(.dark) .summary-box {
 .timeline-item.goal::before {
     background: var(--bg);
     border-color: rgba(0, 255, 195, 0.82);
+    border-width: 2.5px;
     box-shadow:
         0 0 0 5px rgba(0, 255, 195, 0.08),
         0 0 0 10px rgba(0, 255, 195, 0.04);
-    animation: timelineGoalLock 7.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    animation: timelineGoalLock 8.8s ease-in-out infinite;
 }
 
 .timeline-item.goal::after {
-    content: none;
+    content: "";
+    position: absolute;
+    left: -19px;
+    top: 17px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 34%, transparent);
+    z-index: 4;
+    pointer-events: none;
+    animation: timelineGoalCoreDotBreathe 8.8s ease-in-out infinite;
+}
+
+.goal-rings {
+    position: absolute;
+    left: -40px;
+    top: -4px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+    box-shadow:
+        inset 0 0 10px color-mix(in srgb, var(--accent) 8%, transparent),
+        0 0 12px color-mix(in srgb, var(--accent) 8%, transparent);
+    pointer-events: none;
+    z-index: 1;
+    transform-origin: center center;
+    animation: timelineGoalRingBreathe 8.8s ease-in-out infinite;
+}
+
+.goal-rings::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+    transform-origin: center center;
+    animation: timelineGoalInnerRingBreathe 8.8s ease-in-out infinite;
+}
+
+.goal-rings::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0 24%, color-mix(in srgb, var(--accent) 9%, transparent) 38%, transparent 72%);
+    animation: timelineGoalCoreBreathe 8.8s ease-in-out infinite;
+}
+
+.goal-orbit {
+    position: absolute;
+    left: -40px;
+    top: -4px;
+    width: 46px;
+    height: 46px;
+    --orbit-radius: 18.5px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 3;
+    animation: timelineGoalOrbit 32s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.goal-orbit::before,
+.goal-orbit::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.goal-orbit::before {
+    --orbiter-shadow: 0 0 10px color-mix(in srgb, var(--accent) 34%, transparent);
+    --orbiter-shadow-peak: 0 0 14px color-mix(in srgb, var(--accent) 46%, transparent);
+    width: 7px;
+    height: 7px;
+    margin-left: -3.5px;
+    margin-top: -3.5px;
+    transform: translate(-50%, -50%) rotate(0deg) translateY(calc(-1 * var(--orbit-radius)));
+    box-shadow: var(--orbiter-shadow);
+    animation: timelineGoalOrbiterPulse 8.4s ease-in-out infinite;
+}
+
+.goal-orbit::after {
+    --orbiter-shadow: 0 0 7px color-mix(in srgb, var(--accent) 24%, transparent);
+    --orbiter-shadow-peak: 0 0 11px color-mix(in srgb, var(--accent) 34%, transparent);
+    width: 5px;
+    height: 5px;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
+    transform: translate(-50%, -50%) rotate(180deg) translateY(calc(-1 * var(--orbit-radius)));
+    opacity: 0.78;
+    box-shadow: var(--orbiter-shadow);
+    animation: timelineGoalOrbiterPulse 9.2s ease-in-out infinite;
+    animation-delay: -2.2s;
 }
 
 .timeline-year {
@@ -1143,6 +1297,10 @@ body:not(.dark) .summary-box {
     font-weight: 700;
     letter-spacing: 0.18em;
     margin-bottom: 8px;
+}
+
+.timeline-item.goal .timeline-year {
+    padding-left: 16px;
 }
 
 .timeline-card {
@@ -1553,6 +1711,19 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     body::after {
         animation: none;
     }
+
+    .timeline-item.goal::before,
+    .timeline-item.goal::after,
+    .goal-rings,
+    .goal-rings::before,
+    .goal-rings::after,
+    .goal-orbit,
+    .goal-orbit::before,
+    .goal-orbit::after,
+    .timeline-item:not(:last-child)::after,
+    .timeline-item.completed::before {
+        animation: none;
+    }
 }
 
 @keyframes timelineGoalLock {
@@ -1576,6 +1747,72 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
         box-shadow:
             0 0 0 3px rgba(0, 255, 195, 0.2),
             0 0 0 5px rgba(0, 255, 195, 0.11);
+    }
+}
+
+@keyframes timelineGoalOrbit {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes timelineGoalRingBreathe {
+    0%, 100% {
+        opacity: 0.72;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.92;
+        transform: scale(1.045);
+    }
+}
+
+@keyframes timelineGoalInnerRingBreathe {
+    0%, 100% {
+        opacity: 0.56;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.78;
+        transform: scale(1.06);
+    }
+}
+
+@keyframes timelineGoalCoreBreathe {
+    0%, 100% {
+        opacity: 0.42;
+        transform: scale(0.96);
+    }
+    50% {
+        opacity: 0.72;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes timelineGoalOrbiterPulse {
+    0%, 100% {
+        opacity: 0.76;
+        box-shadow: var(--orbiter-shadow);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: var(--orbiter-shadow-peak);
+    }
+}
+
+@keyframes timelineGoalCoreDotBreathe {
+    0%, 100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.22);
+        box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 48%, transparent);
+    }
+    50% {
+        opacity: 0.72;
+        transform: translate(-50%, -50%) scale(0.88);
+        box-shadow: 0 0 6px color-mix(in srgb, var(--accent) 24%, transparent);
     }
 }
 
@@ -1649,6 +1886,22 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
 
     .about-panel {
         grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .about-copy,
+    .milestone-summary {
+        height: auto;
+    }
+
+    .about-quote {
+        margin-top: 8px;
+    }
+
+    .milestone-summary {
+        grid-template-rows: none;
+        align-content: start;
+        padding-top: 10px;
     }
 
     .about-panel-card {
@@ -1661,6 +1914,24 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
 
     .schedule-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .timeline-card-stack {
+        display: grid;
+        min-height: auto;
+    }
+
+    .timeline-item.timeline-item-start .timeline-card-stack,
+    .timeline-item.goal .timeline-card,
+    .timeline-item.goal .timeline-card-stack {
+        min-height: auto;
+    }
+
+    .timeline-card-front,
+    .timeline-card-back {
+        position: relative;
+        inset: auto;
+        grid-area: 1 / 1;
     }
 }
 
