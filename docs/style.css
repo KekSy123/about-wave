@@ -1139,7 +1139,7 @@ body:not(.dark) .summary-box {
 
 .summary-box strong {
     font-family: "Rajdhani", sans-serif;
-    font-size: 1.14rem;
+    font-size: 1.16rem;
     line-height: 1.2;
     max-width: 15ch;
 }
@@ -1729,7 +1729,17 @@ body:not(.dark) .settings-row {
     background: transparent;
     box-shadow: -3px -3px 0 0 rgba(0, 255, 195, 0.22);
     opacity: 0.78;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        border-left-color 0.2s ease,
+        border-bottom-color 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        width 0.2s ease,
+        height 0.2s ease,
+        top 0.2s ease,
+        right 0.2s ease;
     pointer-events: none;
 }
 
@@ -1753,6 +1763,8 @@ body:not(.dark) .settings-row::after {
     border-color: rgba(0, 114, 91, 0.72);
     box-shadow: -4px -4px 0 0 rgba(0, 114, 91, 0.26);
     opacity: 0.96;
+    transition-duration: 0.24s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body:not(.dark) .settings-row:hover::after,
@@ -1787,13 +1799,13 @@ body:not(.dark) .settings-row:focus-within::after {
 
 .settings-row.is-copied::after {
     content: "";
-    width: 12px;
-    height: 7px;
-    top: 20px;
-    right: 1px;
+    width: 13px;
+    height: 8px;
+    top: 18px;
+    right: 0;
     border: none;
-    border-left: 2px solid rgba(0, 255, 195, 0.95);
-    border-bottom: 2px solid rgba(0, 255, 195, 0.95);
+    border-left: 2.5px solid rgba(0, 255, 195, 0.95);
+    border-bottom: 2.5px solid rgba(0, 255, 195, 0.95);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
@@ -1804,9 +1816,13 @@ body:not(.dark) .settings-row:focus-within::after {
 body:not(.dark) .settings-row.is-copied::after,
 body:not(.dark) .settings-row.is-copied:hover::after,
 body:not(.dark) .settings-row.is-copied:focus-within::after {
+    width: 13px;
+    height: 8px;
+    top: 18px;
+    right: 0;
     border: none;
-    border-left: 2px solid rgba(0, 154, 118, 0.9);
-    border-bottom: 2px solid rgba(0, 154, 118, 0.9);
+    border-left: 2.5px solid rgba(0, 114, 91, 0.96);
+    border-bottom: 2.5px solid rgba(0, 114, 91, 0.96);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
@@ -2062,10 +2078,11 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
         grid-template-rows: none;
         align-content: start;
         padding-top: 10px;
+        gap: 12px;
     }
 
     .about-panel-card {
-        min-height: 760px;
+        min-height: 830px;
     }
 
     .about-widgets {
@@ -2142,11 +2159,11 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     }
 
     .about-panel-face {
-        padding-top: 70px;
+        padding-top: 64px;
     }
 
     .about-panel-card {
-        min-height: 860px;
+        min-height: 940px;
     }
 
     .about-panel-toggle {
@@ -2155,13 +2172,13 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     }
 
     .summary-box {
-        min-height: 96px;
+        min-height: 102px;
         padding-right: 18px;
     }
 
     .summary-box strong {
         max-width: none;
-        font-size: 1.08rem;
+        font-size: 1.16rem;
     }
 
     .schedule-grid {
