@@ -3,6 +3,7 @@ const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".section");
 const timelineTabs = document.querySelectorAll(".timeline-tab");
 const timelineViews = document.querySelectorAll(".timeline-view");
+const timelineSwitch = document.querySelector(".timeline-switch");
 const identityBadge = document.getElementById("identityBadge");
 const timelineFlipCards = document.querySelectorAll(".timeline-card-flip");
 const timelineCardStacks = document.querySelectorAll(".timeline-card-stack");
@@ -72,6 +73,16 @@ const syncThemeToggleLayout = () => {
     toggleBtn.style.setProperty("--theme-toggle-left", `${alignedLeft}px`);
 };
 
+const syncTimelineSwitch = (activeTab = document.querySelector(".timeline-tab.active")) => {
+    if (!timelineSwitch || !activeTab) {
+        return;
+    }
+
+    const tabs = Array.from(timelineTabs);
+    const activeIndex = Math.max(tabs.indexOf(activeTab), 0);
+    timelineSwitch.style.setProperty("--timeline-toggle-index", String(activeIndex));
+};
+
 const syncTimelineCardHeights = () => {
     const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
@@ -93,6 +104,7 @@ const syncTimelineCardHeights = () => {
 };
 
 syncThemeToggleLayout();
+syncTimelineSwitch();
 syncTimelineCardHeights();
 window.addEventListener("resize", syncThemeToggleLayout);
 window.addEventListener("resize", syncTimelineCardHeights);
@@ -119,6 +131,7 @@ timelineTabs.forEach((tab) => {
         timelineViews.forEach((view) => view.classList.remove("active"));
 
         tab.classList.add("active");
+        syncTimelineSwitch(tab);
         document.querySelector(`.timeline-view[data-timeline-view="${targetTimeline}"]`)?.classList.add("active");
         syncTimelineCardHeights();
     });
