@@ -29,6 +29,7 @@ const syncThemeToggleLayout = () => {
     toggleBtn.style.removeProperty("--theme-toggle-icon-size");
     toggleBtn.style.removeProperty("--theme-toggle-bottom");
     toggleBtn.style.removeProperty("--theme-toggle-left");
+    toggleBtn.style.removeProperty("--theme-toggle-right");
 
     if (window.matchMedia("(max-width: 640px)").matches) {
         return;
@@ -63,11 +64,14 @@ const syncThemeToggleLayout = () => {
         bottom -= 2;
     }
 
-    if (size !== defaultSize || bottom !== defaultBottom) {
+    if (size !== defaultSize || bottom !== defaultBottom || window.matchMedia("(max-width: 980px)").matches) {
         const iconSize = Math.round(size * 0.46);
         toggleBtn.style.setProperty("--theme-toggle-size", `${size}px`);
         toggleBtn.style.setProperty("--theme-toggle-icon-size", `${iconSize}px`);
         toggleBtn.style.setProperty("--theme-toggle-bottom", `${bottom}px`);
+        toggleBtn.style.setProperty("--theme-toggle-left", "auto");
+        toggleBtn.style.setProperty("--theme-toggle-right", "24px");
+        return;
     }
 
     toggleBtn.style.setProperty("--theme-toggle-left", `${alignedLeft}px`);

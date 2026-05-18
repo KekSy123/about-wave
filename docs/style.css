@@ -170,6 +170,7 @@ body:not(.dark) .site-shell::after {
     background: transparent;
     cursor: pointer;
     perspective: 1200px;
+    transform-style: preserve-3d;
     text-align: inherit;
 }
 
@@ -177,6 +178,7 @@ body:not(.dark) .site-shell::after {
     position: relative;
     min-height: 470px;
     transform-style: preserve-3d;
+    will-change: transform;
     transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -202,7 +204,9 @@ body:not(.dark) .site-shell::after {
         linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
         radial-gradient(circle at 50% 0%, rgba(0, 255, 195, 0.06), transparent 42%);
     box-shadow: var(--shadow);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform-style: preserve-3d;
     overflow: hidden;
 }
 
@@ -214,10 +218,11 @@ body:not(.dark) .badge-face {
     align-items: center;
     justify-content: flex-start;
     padding-bottom: 106px;
+    transform: rotateY(0deg) translateZ(1px);
 }
 
 .badge-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
     align-items: stretch;
     justify-content: space-between;
 }
@@ -348,6 +353,14 @@ body:not(.dark) .player-tag {
     transform: rotate(45deg);
 }
 
+.badge-hint,
+.badge-hint::after,
+.timeline-card-front::after,
+.timeline-card-back::after {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 .badge-hint-back {
     align-self: flex-start;
     margin-top: auto;
@@ -361,7 +374,7 @@ body:not(.dark) .player-tag {
 
 .socials {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
     position: relative;
 }
@@ -393,11 +406,44 @@ body:not(.dark) .nav-link {
 }
 
 .socials a {
-    padding: 12px 10px;
-    font-family: "Rajdhani", sans-serif;
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    min-height: 46px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: color-mix(in srgb, var(--text) 88%, var(--accent) 12%);
+}
+
+.social-icon {
+    width: 21px;
+    height: 21px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(17%) saturate(1223%) hue-rotate(106deg) brightness(101%) contrast(101%);
+}
+
+body:not(.dark) .socials a {
+    color: rgba(0, 114, 91, 0.84);
+}
+
+body:not(.dark) .social-icon {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(31%) saturate(1362%) hue-rotate(130deg) brightness(95%) contrast(96%);
+}
+
+body:not(.dark) .socials a:hover {
+    color: rgba(0, 114, 91, 0.96);
+}
+
+.socials a:hover .social-icon,
+.socials a:focus-visible .social-icon {
+    transform: scale(1.06);
+    opacity: 0.96;
+}
+
+body:not(.dark) .socials a:hover .social-icon,
+body:not(.dark) .socials a:focus-visible .social-icon {
+    filter: brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(1766%) hue-rotate(136deg) brightness(93%) contrast(97%);
 }
 
 .socials a:hover,
@@ -446,6 +492,7 @@ body:not(.dark) .nav-link.active {
 #themeToggle {
     position: fixed;
     left: var(--theme-toggle-left, 24px);
+    right: var(--theme-toggle-right, auto);
     bottom: var(--theme-toggle-bottom, 24px);
     width: var(--theme-toggle-size, 56px);
     height: var(--theme-toggle-size, 56px);
@@ -1488,6 +1535,7 @@ body:not(.dark) .goal-orbit::after {
     background: transparent;
     cursor: pointer;
     perspective: 1200px;
+    transform-style: preserve-3d;
     text-align: left;
     color: inherit;
     font: inherit;
@@ -1497,6 +1545,7 @@ body:not(.dark) .goal-orbit::after {
     position: relative;
     min-height: 122px;
     transform-style: preserve-3d;
+    will-change: transform;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1515,10 +1564,16 @@ body:not(.dark) .goal-orbit::after {
 .timeline-card-back {
     position: absolute;
     inset: 0;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform-style: preserve-3d;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.timeline-card-front {
+    transform: rotateY(0deg) translateZ(1px);
 }
 
 .timeline-card-front::after,
@@ -1545,11 +1600,11 @@ body:not(.dark) .timeline-card-back::after {
 }
 
 .timeline-card-front::after {
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateZ(1px);
 }
 
 .timeline-card-back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(1px);
     align-items: flex-start;
     gap: 8px;
     background:
@@ -1560,7 +1615,7 @@ body:not(.dark) .timeline-card-back::after {
 }
 
 .timeline-card-back::after {
-    transform: rotate(225deg);
+    transform: rotate(225deg) translateZ(1px);
 }
 
 .timeline-card-flip:hover .timeline-card-front::after,
@@ -2078,7 +2133,7 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
 
     .socials-mobile {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
         padding: 14px 24px 24px;
         margin-top: 0;
@@ -2088,8 +2143,7 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     }
 
     .socials-mobile a {
-        padding: 11px 10px;
-        text-align: center;
+        min-height: 46px;
     }
 
     .about-panel {
@@ -2181,10 +2235,6 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
         margin-top: 12px;
     }
 
-    .socials {
-        grid-template-columns: 1fr;
-    }
-
     .panel,
     .settings-group {
         padding: 18px;
@@ -2236,7 +2286,8 @@ body:not(.dark) .settings-row.is-copied:focus-within::after {
     }
 
     #themeToggle {
-        left: 16px;
+        left: auto;
+        right: 16px;
         bottom: 16px;
     }
 
